@@ -1,0 +1,228 @@
+/* الحاوية الأساسية */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    direction: rtl;
+}
+
+/* العناوين */
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* الجداول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    direction: rtl;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: right;
+}
+
+table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+/* زر العودة */
+.btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #27ae60;
+}
+
+/* زر تبديل الوضع */
+.toggle-btn {
+    float: left;
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #7f8c8d;
+}
+
+/* الوضع الليلي */
+.dark-mode {
+    background-color: #2a2828;
+    color: #ecf0f1;
+}
+
+.dark-mode .container {
+    background-color: #2a2828;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode table th {
+    background-color: #2a2828;
+    color: #ecf0f1;
+}
+
+.dark-mode table td {
+    border-color: #666;
+}
+
+.dark-mode input,
+.dark-mode button,
+.dark-mode .btn-back {
+    background-color: #555;
+    color: white;
+    border-color: #444;
+}
+
+.dark-mode .btn-back:hover {
+    background-color: #777;
+}
+
+/* عناصر النموذج */
+input[type="file"],
+input[type="text"],
+button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* روابط التنقل */
+.links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #e67e22;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: #d35400;
+}
+
+/* تعديل حجم صندوق المعاينة */
+.preview-box {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    line-height: 1.2;
+    width: 100%; /* أو عرض محدد مناسب */
+    max-height: 300px; /* ارتفاع مناسب */
+    overflow: auto; /* ظهور شريط تمرير إذا زاد المحتوى */
+    white-space: pre-wrap; /* لف النص بشكل صحيح */
+    word-wrap: break-word; /* كسر الكلمات الطويلة */
+    font-family: monospace; /* لتحسين عرض النص */
+
+}
+
+.dark-mode .preview-box {
+    background-color: #1e1c1c;
+    border-color: #666;
+}
+
+/* زر دائري لتبديل الوضع الليلي بجانب الشاشة */
+.toggle-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.toggle-mode:hover {
+    background-color: #2980b9;
+}
+
+.dark-mode .toggle-mode {
+    background-color: #2a2828;
+    color: white;
+}
+
+/* تحسين عرض النص في الوضع الليلي */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode p,
+.dark-mode .preview-box,
+.dark-mode td,
+.dark-mode th,
+.dark-mode a {
+    color: #f1f1f1;
+}
+
+
+mark {
+    background-color: yellow;
+    font-weight: bold;
+}
+.preview-box {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    max-height: 300px;
+    overflow-y: auto;
+    direction: rtl;
+}
+
+.alert-box {
+    background-color: #ffe0e0;
+    color: #900;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #f99;
+    border-radius: 8px;
+    font-weight: bold;
+}
+

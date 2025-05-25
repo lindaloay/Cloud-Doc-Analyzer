@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نتائج التصنيف</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+<button class="toggle-mode" onclick="toggleMode()">🌓</button>
+        <h1>📊 نتيجة تصنيف المستند</h1>
+        <p>تم تصنيف المستند: <strong>{{ filename }}</strong></p>
+        <p>⚙️ الفئة المتوقعة: <strong>{{ prediction }}</strong></p>
+
+        <a href="/" class="btn-back">⬅ العودة إلى الصفحة الرئيسية</a>
+    </div>
+
+    <script>
+function toggleMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+}
+
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+}
+</script>
+
+</body>
+</html>

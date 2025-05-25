@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>رفع وتحليل المستندات</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <button class="toggle-mode" onclick="toggleMode()">🌓</button>
+
+        <h1>🔼 مرحبًا بك في نظام تحليل المستندات</h1>
+
+        <h2>📤 رفع ملف</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">رفع الملف</button>
+        </form>
+
+        <hr>
+
+        <h2>🔎 بحث داخل المستندات</h2>
+        <form action="/search" method="POST">
+            <input type="text" name="search_text" placeholder="أدخل النص للبحث" required>
+            <button type="submit">بحث</button>
+        </form>
+
+        <hr>
+
+        <div class="links">
+            <a href="/documents" class="btn-back">📄 قائمة المستندات</a>
+            <a href="/preview" class="btn-back">👁️‍🗨️ عرض محتوى المستندات</a>
+            <a href="/stats" class="btn">📊 إحصائيات النظام</a>
+            <a href="/about" class="btn-back">ℹ️ حول المشروع</a>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+        }
+
+        window.onload = function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        }
+    </script>
+
+
+</body>
+</html>

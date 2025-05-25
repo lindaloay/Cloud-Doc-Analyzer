@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>معاينة المستندات</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+<button class="toggle-mode" onclick="toggleMode()">🌓</button>
+        <h1>📖 معاينة محتوى المستندات</h1>
+
+        {% for file, content in previews.items() %}
+            <div class="preview-box">
+                <h3>{{ file }}</h3>
+                <pre>{{ content }}</pre>
+            </div>
+        {% endfor %}
+
+        <br>
+        <a href="/" class="btn-back">⬅ العودة إلى الصفحة الرئيسية</a>
+    </div>
+
+    <script>
+function toggleMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+}
+
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+}
+</script>
+
+</body>
+</html>

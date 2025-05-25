@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>حول المشروع</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <button class="toggle-mode" onclick="toggleMode()">🌓</button>
+        <h1>ℹ️ حول المشروع</h1>
+
+        <div class="about-box">
+            <p>هذا المشروع يهدف إلى <strong>تحليل وتصنيف المستندات النصية</strong> (TXT، PDF، DOCX) باستخدام الذكاء الاصطناعي.</p>
+
+            <h3>الميزات الأساسية:</h3>
+            <ul>
+                <li>📁 رفع ملفات متعددة الصيغ</li>
+                <li>🤖 تصنيف المستندات تلقائيًا</li>
+                <li>🔍 البحث داخل المحتوى</li>
+                <li>👁️ عرض معاينة النص</li>
+                <li>☁️ تخزين على Dropbox</li>
+                <li>📊 عرض إحصائيات النظام</li>
+            </ul>
+
+            <h3>أدوات وتقنيات مستخدمة:</h3>
+            <ul>
+                <li>Python + Flask</li>
+                <li>scikit-learn + joblib</li>
+                <li>Dropbox API</li>
+                <li>SQLite لتخزين البيانات</li>
+            </ul>
+
+            <p>تم تنفيذ المشروع ضمن مساق <strong>النظم السحابية والموزعة - SICT4313</strong>.</p>
+        </div>
+
+        <br>
+        <a href="/" class="btn-back">⬅ العودة إلى الصفحة الرئيسية</a>
+    </div>
+
+<script>
+function toggleMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+}
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+}
+</script>
+</body>
+</html>

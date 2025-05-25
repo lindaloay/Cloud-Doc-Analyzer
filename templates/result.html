@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نتيجة العملية</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+<button class="toggle-mode" onclick="toggleMode()">🌓</button>
+        <h1>📋 نتيجة العملية</h1>
+
+        {% if filename and prediction %}
+    <div class="result-box">
+        <h2>📄 الملف: {{ filename }}</h2>
+        <p>📑 التصنيف: <strong>{{ prediction }}</strong></p>
+    </div>
+
+    {# لا تظهر رسالة "لا توجد نتائج" عند رفع ملف #}
+{% elif results %}
+    <ul>
+    {% for result in results %}
+        <li>
+            <strong>{{ result.filename }}</strong><br>
+                <div class="preview-box">{{ result.highlighted_text|safe }}</div>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>لا توجد نتائج مطابقة</p>
+{% endif %}
+
+        <br>
+        <a href="/" class="btn-back">⬅ العودة إلى الصفحة الرئيسية</a>
+    </div>
+
+
+{% if alert_message %}
+    <div class="alert-box">
+        ⚠️ {{ alert_message }}
+    </div>
+{% endif %}
+
+
+
+   <script>
+function toggleMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+}
+
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+}
+</script>
+
+
+
+</body>
+</html>
