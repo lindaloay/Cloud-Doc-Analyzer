@@ -1,0 +1,17 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment & virtualenv
+.env
+venv/
+
+# Uploads and database (local-only)
+uploads/
+files.db
+
+# Model files (اختياري حسب الحجم)
+*.pkl
+*.joblib
+
+
